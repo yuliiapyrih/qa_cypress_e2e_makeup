@@ -1,0 +1,25 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "1. Clone repository\r 2. Run npm i.\r 3. Run npx cypress open.",
+  "main": "index.js",
+  "scripts": {
+    "generate:report": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mocha/mochawesome-report.json && marge cypress/reports/mocha/mochawesome-report.json -f report.html",
+    "dev": "set NODE_OPTIONS=--unhandled-rejections=strict && nodemon ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yuliia",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cypress": "^1.1.3",
+    "cypress": "^12.13.0",
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
+}

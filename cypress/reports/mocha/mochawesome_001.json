@@ -1,0 +1,171 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 2,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-07-20T13:31:22.429Z",
+    "end": "2023-07-20T13:32:07.024Z",
+    "duration": 44595,
+    "testsRegistered": 4,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "36ee0497-3efc-444f-88a4-c5d6c7605579",
+      "title": "",
+      "fullFile": "cypress\\e2e\\makeup.cy.js",
+      "file": "cypress\\e2e\\makeup.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d4c836db-8a4b-4773-9143-f63d656bc174",
+          "title": "Makeup",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should provide an ability to price filter working correctly",
+              "fullTitle": "Makeup should provide an ability to price filter working correctly",
+              "timedOut": null,
+              "duration": 16804,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nhomePage.clickOnCategory(category.title[0]);\ncategoryPage.chooseFilter(5);\ncategoryPage.chooseFilter(9);\ncategoryPage.sortByCost();\ncategoryPage.checkSortedPrices();",
+              "err": {
+                "message": "AssertionError: expected 123 to be at least 128",
+                "estack": "AssertionError: expected 123 to be at least 128\n    at Context.eval (webpack:///./cypress/support/pages/category.pageObject.js:30:34)",
+                "diff": "- 123\n+ 128\n"
+              },
+              "uuid": "46517c33-6b1c-4b40-9c07-a3d3b49671b8",
+              "parentUUID": "d4c836db-8a4b-4773-9143-f63d656bc174",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should provide an ability to add items to the basket",
+              "fullTitle": "Makeup should provide an ability to add items to the basket",
+              "timedOut": null,
+              "duration": 16740,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nhomePage.clickOnCategory(category.title[0]);\ncategoryPage.clickBuyBtn(product.title[0]);\nproductCartPage.closeCartBtn();\nhomePage.clickOnCategory(category.title[1]);\ncategoryPage.clickBuyBtn(product.title[1]);\nproductCartPage.checkAddedProducts(product.title[0], product.title[1]);\nproductCartPage.checkTotalPrice();\nproductCartPage.deleteBtn();\nproductCartPage.checkDeletedProduct(product.title[1]);",
+              "err": {},
+              "uuid": "d87df727-385f-423e-b99f-6e74c745c23a",
+              "parentUUID": "d4c836db-8a4b-4773-9143-f63d656bc174",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should provide an ability to search the item",
+              "fullTitle": "Makeup should provide an ability to search the item",
+              "timedOut": null,
+              "duration": 5624,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nsearchPage.clickSearchBtn();\nsearchPage.typeSearchField(product.search);\nsearchPage.checkResultSearching(product.search);",
+              "err": {},
+              "uuid": "2e6d2126-6d4c-4623-a053-02ad6d93e4a6",
+              "parentUUID": "d4c836db-8a4b-4773-9143-f63d656bc174",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should provide the ability to add feedback to the product",
+              "fullTitle": "Makeup should provide the ability to add feedback to the product",
+              "timedOut": null,
+              "duration": 5266,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nhomePage.clickOnProduct(product.title[2]);\nproductDetailsPage.addCommentBtn();\ncommentForm.clickOnStar();\ncommentForm.typeName(user.name);\ncommentForm.typeComment(user.comment);\ncommentForm.clickSubmitCommentBtn();\ncommentForm.checkAddingComment();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Lacoste L.12.12 Rose Eau Fraiche' within the selector: '.simple-slider-list__name' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Lacoste L.12.12 Rose Eau Fraiche' within the selector: '.simple-slider-list__name' but never did.\n    at HomePageObject.clickOnProduct (webpack:///./cypress/support/pages/home.pageObject.js:12:7)\n    at Context.eval (webpack:///./cypress/e2e/makeup.cy.js:83:13)",
+                "diff": null
+              },
+              "uuid": "4dbb3d94-a187-4008-84c5-6d0d99bc4339",
+              "parentUUID": "d4c836db-8a4b-4773-9143-f63d656bc174",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d87df727-385f-423e-b99f-6e74c745c23a",
+            "2e6d2126-6d4c-4623-a053-02ad6d93e4a6"
+          ],
+          "failures": [
+            "46517c33-6b1c-4b40-9c07-a3d3b49671b8",
+            "4dbb3d94-a187-4008-84c5-6d0d99bc4339"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 44434,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

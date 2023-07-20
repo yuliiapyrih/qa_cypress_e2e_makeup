@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-20T13:33:45.998Z",
+    "end": "2023-07-20T13:34:30.557Z",
+    "duration": 44559,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8cc71a88-8a09-4e6a-8715-a77387c2be8c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\makeup.cy.js",
+      "file": "cypress\\e2e\\makeup.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5696b70e-264f-4fa5-9060-aae4d3f73cac",
+          "title": "Makeup",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should provide an ability to price filter working correctly",
+              "fullTitle": "Makeup should provide an ability to price filter working correctly",
+              "timedOut": null,
+              "duration": 17191,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nhomePage.clickOnCategory(category.title[0]);\ncategoryPage.chooseFilter(5);\ncategoryPage.chooseFilter(9);\ncategoryPage.sortByCost();\ncategoryPage.checkSortedPrices();",
+              "err": {
+                "message": "AssertionError: expected 123 to be at least 128",
+                "estack": "AssertionError: expected 123 to be at least 128\n    at Context.eval (webpack:///./cypress/support/pages/category.pageObject.js:30:34)",
+                "diff": "- 123\n+ 128\n"
+              },
+              "uuid": "a9f927a9-7292-4d5c-b248-c4157bb6b298",
+              "parentUUID": "5696b70e-264f-4fa5-9060-aae4d3f73cac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should provide an ability to add items to the basket",
+              "fullTitle": "Makeup should provide an ability to add items to the basket",
+              "timedOut": null,
+              "duration": 15783,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nhomePage.clickOnCategory(category.title[0]);\ncategoryPage.clickBuyBtn(product.title[0]);\nproductCartPage.closeCartBtn();\nhomePage.clickOnCategory(category.title[1]);\ncategoryPage.clickBuyBtn(product.title[1]);\nproductCartPage.checkAddedProducts(product.title[0], product.title[1]);\nproductCartPage.checkTotalPrice();\nproductCartPage.deleteBtn();\nproductCartPage.checkDeletedProduct(product.title[1]);",
+              "err": {},
+              "uuid": "bb150801-2ddb-4048-a3ea-ecb7c8417528",
+              "parentUUID": "5696b70e-264f-4fa5-9060-aae4d3f73cac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should provide an ability to search the item",
+              "fullTitle": "Makeup should provide an ability to search the item",
+              "timedOut": null,
+              "duration": 4442,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nsearchPage.clickSearchBtn();\nsearchPage.typeSearchField(product.search);\nsearchPage.checkResultSearching(product.search);",
+              "err": {},
+              "uuid": "ef61ca18-8b13-4c71-a452-0f0acb4aaf58",
+              "parentUUID": "5696b70e-264f-4fa5-9060-aae4d3f73cac",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should provide the ability to add feedback to the product",
+              "fullTitle": "Makeup should provide the ability to add feedback to the product",
+              "timedOut": null,
+              "duration": 6986,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nhomePage.clickOnProduct(product.title[2]);\nproductDetailsPage.addCommentBtn();\ncommentForm.clickOnStar();\ncommentForm.typeName(user.name);\ncommentForm.typeComment(user.comment);\ncommentForm.clickSubmitCommentBtn();\ncommentForm.checkAddingComment();",
+              "err": {},
+              "uuid": "7463489c-28e3-4e08-9414-015f2fcc5789",
+              "parentUUID": "5696b70e-264f-4fa5-9060-aae4d3f73cac",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bb150801-2ddb-4048-a3ea-ecb7c8417528",
+            "ef61ca18-8b13-4c71-a452-0f0acb4aaf58",
+            "7463489c-28e3-4e08-9414-015f2fcc5789"
+          ],
+          "failures": [
+            "a9f927a9-7292-4d5c-b248-c4157bb6b298"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 44402,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 1,
+    "pending": 0,
+    "failures": 3,
+    "start": "2023-07-20T13:17:39.777Z",
+    "end": "2023-07-20T13:18:15.975Z",
+    "duration": 36198,
+    "testsRegistered": 4,
+    "passPercent": 25,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ffc32b5d-2f77-4e67-8797-2366393ad507",
+      "title": "",
+      "fullFile": "cypress\\e2e\\makeup.cy.js",
+      "file": "cypress\\e2e\\makeup.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3ec44582-9aec-4cb5-bca0-3e303c8e42f0",
+          "title": "Makeup",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should provide an ability to price filter working correctly",
+              "fullTitle": "Makeup should provide an ability to price filter working correctly",
+              "timedOut": null,
+              "duration": 16953,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nhomePage.clickOnCategory(category.title[0]);\ncategoryPage.chooseFilter(5);\ncategoryPage.chooseFilter(9);\ncategoryPage.sortByCost();\ncategoryPage.checkSortedPrices();",
+              "err": {
+                "message": "AssertionError: expected 123 to be at least 128",
+                "estack": "AssertionError: expected 123 to be at least 128\n    at Context.eval (webpack:///./cypress/support/pages/category.pageObject.js:30:34)",
+                "diff": "- 123\n+ 128\n"
+              },
+              "uuid": "a7fbac6c-8140-44c1-b977-179f50081199",
+              "parentUUID": "3ec44582-9aec-4cb5-bca0-3e303c8e42f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should provide an ability to add items to the basket",
+              "fullTitle": "Makeup should provide an ability to add items to the basket",
+              "timedOut": null,
+              "duration": 8774,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nhomePage.clickOnCategory(category.title[0]);\ncategoryPage.clickBuyBtn(product.title[0]);\nproductCartPage.closeCartBtn();\nhomePage.clickOnCategory(category.title[1]);\ncategoryPage.clickBuyBtn(product.title[1]);\nproductCartPage.checkAddedProducts(product.title[0], product.title[1]);\nproductCartPage.checkTotalPrice();\nproductCartPage.deleteBtn();\nproductCartPage.checkDeletedProduct(product.title[1]);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Bourjois Khol & Contour XL Extra-Long Wear' within the selector: '.simple-slider-list__name' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Bourjois Khol & Contour XL Extra-Long Wear' within the selector: '.simple-slider-list__name' but never did.\n    at CategoryPageObject.clickBuyBtn (webpack:///./cypress/support/pages/category.pageObject.js:37:7)\n    at Context.eval (webpack:///./cypress/e2e/makeup.cy.js:57:17)",
+                "diff": null
+              },
+              "uuid": "71b28b53-98aa-4266-94b5-dbf1a683afcc",
+              "parentUUID": "3ec44582-9aec-4cb5-bca0-3e303c8e42f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should provide an ability to search the item",
+              "fullTitle": "Makeup should provide an ability to search the item",
+              "timedOut": null,
+              "duration": 5036,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nsearchPage.clickSearchBtn();\nsearchPage.typeSearchField(product.search);\nsearchPage.checkResultSearching(product.search);",
+              "err": {},
+              "uuid": "7c91ad33-77d7-42f8-9a3c-c0e927ed8a72",
+              "parentUUID": "3ec44582-9aec-4cb5-bca0-3e303c8e42f0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should provide the ability to add feedback to the product",
+              "fullTitle": "Makeup should provide the ability to add feedback to the product",
+              "timedOut": null,
+              "duration": 5172,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.checkHomeUrl();\nhomePage.clickOnProduct(product.title[2]);\nproductDetailsPage.addCommentBtn();\ncommentForm.clickOnStar();\ncommentForm.typeName(user.name);\ncommentForm.typeComment(user.comment);\ncommentForm.clickSubmitCommentBtn();\ncommentForm.checkAddingComment();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'HUGO Deep Red' within the selector: '.simple-slider-list__name' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'HUGO Deep Red' within the selector: '.simple-slider-list__name' but never did.\n    at HomePageObject.clickOnProduct (webpack:///./cypress/support/pages/home.pageObject.js:12:7)\n    at Context.eval (webpack:///./cypress/e2e/makeup.cy.js:83:13)",
+                "diff": null
+              },
+              "uuid": "f89f6012-ab9c-43e0-8569-747efdc87b75",
+              "parentUUID": "3ec44582-9aec-4cb5-bca0-3e303c8e42f0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7c91ad33-77d7-42f8-9a3c-c0e927ed8a72"
+          ],
+          "failures": [
+            "a7fbac6c-8140-44c1-b977-179f50081199",
+            "71b28b53-98aa-4266-94b5-dbf1a683afcc",
+            "f89f6012-ab9c-43e0-8569-747efdc87b75"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 35935,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
